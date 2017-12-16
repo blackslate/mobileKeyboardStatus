@@ -6,11 +6,11 @@
     pre.innerHTML += message + "\n"
   }
 
-  let dim = window.dimensions
+  let key = window.keyboard
 
-  dim.addEventListener("resize", resize)
-  dim.addEventListener("keyboardchange", keyboardchange)
-  dim.addEventListener("focuschange", focuschange)
+  key.addEventListener("resize", resize)
+  key.addEventListener("keyboardchange", keyboardchange)
+  key.addEventListener("focuschange", focuschange)
 
   function resize(dimensions, orientation) {
     let message =  orientation + " " + dimensions.width + "x" + dimensions.height
