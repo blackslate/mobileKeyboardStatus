@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="height = device-height, width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no, target-densitydpi = device-dpi" />
+
+  <title>Test Keyboard visibility</title>
+
+  <style>
+     html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #003;
+     }
+
+    .disabled {
+      pointer-events: none;
+      background-color: #fcc;
+    }
+
+    div {
+      border: 0.5vmin solid #888;
+      border-radius: 1vmin;
+      background-color: #fff;
+    }
+
+    section {
+      background-color: #efe;
+      width: 50%;
+    }
+
+    section * {
+      display: block;
+      height: 10vmin;
+      box-sizing: border-box;
+      margin: 5vmin 0;
+      width: 100%;
+    }
+
+    .locked {
+      background-color: #ccc
+    }
+
+    .locked * {
+      opacity: 0.5;
+    }
+
+    pre.scroll {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100vh;
+      margin: 0;
+      background-color: #fed;
+      font-size: 3vw;
+      overflow: scroll;
+    }
+
+    @media screen and (orientation:landscape) {
+      pre.scroll {
+        height: 100vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="locked">
+    <input type="text" name="" value="" disabled>
+    <input type="text" name="" value="" class="disabled">
+    <textarea disabled></textarea>
+    <textarea  class="disabled"></textarea>
+    <div></div>
+  </section>
+
+  <section class="editable">
+    <textarea></textarea>
+    <div contenteditable="true"></div>
+
+    <input type="text" name="" value="">
+    <input type="number" name="" value="">
+    <input type="color" name="" value="#009900">
+    <input type="checkbox" name="" value="">
+    <input type="radio" name="" value="">
+    <input type="date" name="" value="">
+    <input type="file" name="" value="">
+    <input type="month" name="" value="">
+    <input type="password" name="" value="">
+    <input type="range" name="" value="">
+    <input type="time" name="" value="">
+  </section>
+
+  <pre class="scroll"></pre>
+
+  <script src="js/keyboard.js"></script>
+  <script src="js/test.js"></script>
+ 
+</body>
+</html>
