@@ -13,7 +13,7 @@ If you want to ensure that certain key items are visible even when a virtual key
 
 The solution that I have come up with relies on detecting a change in height of the window within a second of the keyboard focus changing. In my tests, this may give a false positive if the user is using a computer with a touchscreen and a keyboard and mouse, and uses the mouse first to (de-)select an editable element and then immediately changes the window height. If you find other false positives or negatives, either on a computer or a mobile device, please let me know.
 ## Use
-Add the Keyboard class to your project, then use `keyboard.addEventListener(&lt;event&gt;, &lt;listener function&gt;)` to receive notification of events. Here are the events and the arguments for the callbacks:
+Add the Keyboard class to your project, then use `keyboard.addEventListener(<event>, <listener function>)` to receive notification of events. Here are the events and the arguments for the callbacks:
 
 * keyboardchange (&lt;"shown"|"hidden"&gt;, { width: &lt;integer width&gt;, height: &lt;integer height&gt; })
 * resize ({ width: &lt;integer width&gt;, height: &lt;integer height&gt; }, &lt;"portrait"|"landscape"&gt;)
